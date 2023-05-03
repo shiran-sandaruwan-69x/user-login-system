@@ -1,0 +1,53 @@
+node walin api eka gahanne express use karagena
+
+api project ekata install kara gann ona tika
+
+/*
+* express
+* mongoose -- npm i nodemon -g mongo wenuwata meke wada karanna lesi nisa mongoose use karanne
+* cors  -- Cross-Origin Resource Sharing / wena server ekakin data ena ewa ganna
+* dotenv- github danne nathi key thiya ganna
+*nodemon - application eka hama welawema run karanna ona na nodemon dannmama 
+* */
+
+npm i bcrypt
+npm i jsonwebtoken
+npm i nodemailer
+
+  ========          npm i express mongoose cors dotenv  ======
+
+npm i express mongoose cors dotenv nodemon bcrypt jsonwebtoken nodemailer
+
+
+////////////////////////////////
+const categories = await Category.find().populate( "user", ( "_id","name" ) );
+
+        return response.status( 200 ).json( { ok : true, msg : "Get Categories", categories } ); 
+
+
+//////////////////////////////////
+const deleteCategory = async ( request, response = response ) =>
+{
+    
+    try 
+    {
+        const { categoryId } = request.body;
+
+        const result = await Category.findByIdAndDelete( categoryId );
+      
+        if( !result )
+        {
+            return response.status( 400 ).json( { ok : false, msg : "Post dont found" } );
+        };
+
+        return response.status( 200 ).json( { ok : true, msg : "Delete Category", categoryId } );
+
+    }
+    catch( error ) 
+    {
+        console.log( error );
+        response.status( 500 ).json( { ok : false, msg : "Please contact the administrator" } );    
+    };
+
+
+http://localhost:3000/api/v1/userRoute/login
