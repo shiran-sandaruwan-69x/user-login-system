@@ -1,0 +1,26 @@
+
+<div class="main-wrap">
+  <div class="content-wrap">
+   <div class="left">
+    <h3 class="business-name">welcome</h3>
+     <div class="loading-area">
+       <div class="inner-wrap">
+        <ul class="list">
+          <li  routerLinkActive="activated-route" routerLink="/auth/login/access">
+            <span>Login</span>
+          </li>
+          <li  routerLinkActive="activated-route" routerLink="/auth/login/register">
+            <span>Sign Up</span>
+          </li>
+        </ul>
+
+         <router-outlet></router-outlet>
+
+       </div>
+     </div>
+   </div>
+    <div class="right">
+      <img src="https://images.unsplash.com/photo-1522199755839-a2bacb67c546?ixid=MnwxMjA3fDB8MHxzZWFyY2h8NXx8ZSUyMGNvbW1lcmNlfGVufDB8fDB8fA%3D%3D&ixlib=rb-1.2.1&w=1000&q=80" alt="bg-image">
+    </div>
+  </div>
+</div>

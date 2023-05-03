@@ -1,0 +1,23 @@
+<div class="outer">
+  <form class="example-form" [formGroup]="loginForm" (ngSubmit)="login()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+      <mat-error *ngIf="loginForm.get('email')?.touched && ! loginForm.get('email')?.invalid">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" >
+      <mat-label>password</mat-label>
+      <input type="password" matInput placeholder="" formControlName="password">
+      <mat-error *ngIf="loginForm.get('password')?.touched && ! loginForm.get('password')?.invalid">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <button mat-raised-button [disabled]="loginForm.invalid" class="sing-in-button">sign in</button>
+
+  </form>
+</div>

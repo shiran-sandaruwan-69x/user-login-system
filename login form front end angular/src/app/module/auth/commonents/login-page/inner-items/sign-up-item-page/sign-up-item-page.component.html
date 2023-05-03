@@ -1,0 +1,55 @@
+<div class="outer">
+  <form class="example-form" [formGroup]="signUpForm" (ngSubmit)="register()">
+
+    <mat-form-field class="example-full-width">
+      <mat-label>first name</mat-label>
+      <input type="text" matInput placeholder="shiran" formControlName="fName">
+      <mat-error *ngIf="signUpForm.get('fName')?.touched && ! signUpForm.get('fName')?.invalid">
+        Please enter a valid first name
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>last name</mat-label>
+      <input type="text" matInput placeholder="sandaruwan" formControlName="lName">
+      <mat-error *ngIf="signUpForm.get('lName')?.touched && ! signUpForm.get('lName')?.invalid">
+        Please enter a last name
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput placeholder="Ex. pat@example.com" formControlName="email">
+      <mat-error *ngIf="signUpForm.get('email')?.touched && ! signUpForm.get('email')?.invalid">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+
+    <mat-form-field class="example-full-width" >
+      <mat-label>password</mat-label>
+      <input type="password" matInput placeholder="" formControlName="password">
+      <mat-error *ngIf="signUpForm.get('password')?.touched && ! signUpForm.get('password')?.invalid">
+        Please enter a valid email address
+      </mat-error>
+    </mat-form-field>
+    <br>
+    <br>
+    <button mat-raised-button [disabled]="signUpForm.invalid" class="sing-up-button">sign up</button>
+    <mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+
+  </form>
+
+  <div class="button-wrap">
+    <div class="items">
+      <mat-icon>facebook</mat-icon>
+    </div>
+    <div class="items">
+      <mat-icon>gpp_good</mat-icon>
+    </div>
+    <div class="items">
+      <mat-icon>attach_email</mat-icon>
+    </div>
+  </div>
+
+</div>
